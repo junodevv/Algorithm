@@ -25,3 +25,7 @@ Empty
 </code></pre></div>
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+
+그래서 결론은
+
+" " 안에서 "(큰따옴표)와 \는 \ 가 필요하다.
