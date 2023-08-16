@@ -5,7 +5,8 @@ public class Solution {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
-
-        System.out.print("a = " + a + "\n" +"b = " + b );
+        if(-100000<=a && b<=100000){
+            System.out.print("a = " + a + "\n" +"b = " + b );
+        }
     }
 }
