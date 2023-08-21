@@ -71,3 +71,36 @@ Empty
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+
+
+# 다른사람풀이
+
+```java
+class Solution {
+    public String solution(String my_string, String overwrite_string, int s) {
+        String answer = "";
+        answer = my_string.substring(0, s) + overwrite_string + my_string.substring(overwrite_string.length() + s);
+        return answer;
+    }
+}
+```
+
+#### substring(startIndex); : startIndex 부터 끝까지의 string을 잘라서 보관
+
+#### substring(startIndex, endIndex(불포함); : startIndex 부터 endIndex까지의 string을 잘라서 보관
+
+ex)
+```java
+string str = "hello";
+
+str.substring(2); // "llo"
+
+str.substring(2,4); // "ll", (4 불포함)
+str.substring(1,4); // "ell", (4 불포함)
+```
+
+**주의**
+
+```java
+str.substring(5); // 안될거같지만 빈 string("")을 반환, 하지만 str.length()를 넘으면 안됨
+```
