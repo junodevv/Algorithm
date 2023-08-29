@@ -158,3 +158,33 @@ Empty
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+
+-----
+# 다른사람풀이
+```java
+class Solution {
+    public String solution(String code) {
+        StringBuilder answer = new StringBuilder();
+        int mode = 0;
+        for (int i = 0; i < code.length(); i++) {
+            char current = code.charAt(i);
+            if (current == '1') {
+                mode = mode == 0 ? 1 : 0;
+                continue;
+            }
+
+            if (i % 2 == mode) {
+                answer.append(current);
+            }
+        }
+        return answer.length() == 0 ? "EMPTY" : answer.toString();
+    }
+}
+```
+
+1. StringBuilder 를 사용하여 변형이 가능한 String을 만듦
+2. StringBuilder를 사용했기 때문에 append함수를 사용할수 있게됨
+3. StringBuilder를 사용했기 때문에 return할때 answer.toString()으로 String 형식으로 바꿔줌
+
+[참고사이트](https://onlyfor-me-blog.tistory.com/317)
+[내가 정리한 사이트](https://junodevv.github.io/java/2023/08/29/StringBuilder-StringBuffer.html)
