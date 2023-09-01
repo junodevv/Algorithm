@@ -71,3 +71,32 @@ Empty
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+
+--------
+
+# 다른사람풀이
+
+```java
+class Solution {
+    public int solution(int n, String control) {
+        int answer = n;
+
+        for(char ch : control.toCharArray()) {
+            switch(ch) {
+                case 'w': answer += 1; break;
+                case 's': answer -= 1; break;
+                case 'd': answer += 10; break;
+                case 'a': answer -= 10; break;
+                default:break;
+            }
+        }
+
+        return answer;
+    }
+}
+```
+
+배울점 및 깨달은점
+
+1. String을 .toCharArray() 로 char[] 배열로 만들수 있다는 점
+2. ```default: break;```를 쓴 점(나는 안씀)
