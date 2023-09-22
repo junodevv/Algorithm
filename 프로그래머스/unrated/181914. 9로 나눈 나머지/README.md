@@ -66,3 +66,36 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+
+-----
+
+# 다른 사람 풀이
+
+```java
+class Solution {
+    public int solution(String number) {
+        int answer = 0;
+
+        for(int i=0; i<number.length(); i++) {
+            answer += number.charAt(i) - '0';
+        }
+
+        answer %= 9;
+
+        return answer;
+    }
+}
+```
+
+참고할점
+
+1. char형에 - '0'을 수행하게되면 자동 형변환을 통해 char형에 저장된 '정수' 값을 얻을 수 있다. (*ASCII 코드를 보면 '0' == 48, '1' ==49, ... 인 것을 알 수 있다.)
+<img width="144" alt="image" src="https://github.com/junodevv/Algorithm/assets/126752196/6da4551b-ad5d-4c6d-a981-0ce8a8b4c8a4">
+
+-----
+
+# 이번 문제로 새로 알게된 점
+
+1. 참고할점 참고
+2. 함수 ```String.toCharArray()```를 사용하면 String형을 char형의 배열로 만들 수 있다.
+3. ```Character.getNumericValue(char)```를 사용함녀 char형을 Int형으로 변환할 수 있다.
