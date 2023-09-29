@@ -85,3 +85,29 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+
+-----
+
+# 다른사람풀이 1
+
+```java
+import java.util.*;
+
+class Solution {
+    public String solution(String my_string, int[][] queries) {
+        for (int[] query : queries) {
+            int s = query[0], e = query[1];
+            StringBuffer sb = new StringBuffer();
+            for (int i = s;i <= e;i++)
+                sb.append(my_string.charAt(i));
+            my_string = my_string.substring(0, s) + sb.reverse().toString() + my_string.substring(e + 1, my_string.length());
+        }
+        return my_string;
+    }
+}
+```
+
+### 알게된점
+1. Stringbuilder 나 Stringbuffer 클래스를 이용하면 ```.reverse()``` 를 활용하여 문자열을 뒤집을 수 있다.
+2. Stringbuilder 에 대한 메소드들을 한번 알아보면 좋을 것 같다.
+  
