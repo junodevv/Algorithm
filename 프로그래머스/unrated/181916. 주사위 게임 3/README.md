@@ -121,3 +121,99 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+
+-----
+
+# 다른사람풀이1
+
+```java
+import java.util.Arrays;
+
+class Solution {
+    public int solution(int a, int b, int c, int d) {
+
+        int[] dice = { a, b, c, d };
+        Arrays.sort(dice);
+
+        int ans = 0;
+
+        if (dice[0] == dice[3]) {
+            ans = 1111 * dice[3];
+        } else if (dice[0] == dice[2] || dice[1] == dice[3]) {
+            ans = (int) Math.pow(dice[1] * 10 + (dice[0] + dice[3] - dice[1]), 2);
+        } else if (dice[0] == dice[1] && dice[2] == dice[3]) {
+            ans = (dice[0] + dice[3]) * (dice[3] - dice[0]);
+        } else if (dice[0] == dice[1]) {
+            ans = dice[2] * dice[3];
+        } else if (dice[1] == dice[2]) {
+            ans = dice[0] * dice[3];
+        } else if (dice[2] == dice[3]) {
+            ans = dice[0] * dice[1];
+        } else {
+            ans = dice[0];
+        }
+
+        return ans;
+    }
+}
+```
+
+### 깨달은점
+1. ```Arrays``` 클래스를 이용하면 ```Arrays.sort(array)``` 함수를 이용해 오름차순으로 정렬할 수 있어서 이를 활용해 조건문을 만들 수 있다.
+
+Ex)
+```java
+int[] arr = {5, 3, 4, 1, 2};
+
+Arrays.sort(arr);
+
+for (int i = 0; i < arr.length; i++) {
+    System.out.print(arr[i] + " ");
+}
+```
+
+결과: 1 2 3 4 5
+
+-----
+
+# 다른사람풀이2
+
+```java
+mport java.util.*;
+class Solution {
+    public int solution(int a, int b, int c, int d) {
+        int[] dice = {a, b, c, d};
+        Arrays.sort(dice);
+        // 배열로 정렬하면, 
+        if (dice[0] == dice[3]) {  // 처음과 끝이 같으면 모두 같은 숫자 
+            return 1111 * dice[0];
+        }
+        else if (dice[0] == dice[2]) {  // 세 숫자가 같은 경우 1
+            return (int) Math.pow((10 * dice[0] + dice[3]),2);
+        }
+        else if (dice[1] == dice[3]) {  // 세 숫자가 같은 경우 2
+            return (int) Math.pow((10 * dice[1] + dice[0]),2);
+        }
+        else if (dice[0] == dice[1] && dice[2] == dice[3]) { // 2개씩 같은 값
+            return (dice[0] + dice[2]) * Math.abs(dice[0] - dice[2]);
+        }
+        else if (dice[0] == dice[1] || dice[1] == dice[2] || dice[2] == dice[3]) { // 2개는 동일하고, 나머지 주사위가 다른 경우
+            if (dice[0] == dice[1]) {
+                return dice[2] * dice[3];
+            }
+            else if (dice[1] == dice[2]) {
+                return dice[0] * dice[3];
+            }
+            else {
+                return dice[0] * dice[1];
+            }
+
+        }
+        else {
+            return dice[0];
+        }
+    }
+}
+```
+
+1. 다른사람풀이 1과 같은 클래스함수를 이용한 풀이
