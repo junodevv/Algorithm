@@ -96,3 +96,11 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+
+-----
+
+# 알게된점
+
+<img width="251" alt="image" src="https://github.com/junodevv/Algorithm/assets/126752196/793ee4e2-16c0-4fb3-8b4b-0e9bad2a90c2">
+
+그냥 String에 + 연산자를 사용해서 string을 더하는 것(2.06ms)보다 StringBuilder를 사용하여 append 하는게(0.05ms) 훨씬 성능이 좋다.
