@@ -91,3 +91,18 @@
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+
+-----
+
+# 다른사람풀이
+
+```java
+class Solution {
+    public int solution(String my_string, String is_prefix) {
+        if (my_string.startsWith(is_prefix)) return 1;
+        return 0;
+    }
+}
+```
+1. ```str.startWith(str2)``` 함수를 사용하면 str2로 시작하는 string인지 체크하여 True / False 값을 return 해준다.
+> *endWith(str)은 str로 끝나는 string 인지 체크해준다.
