@@ -104,5 +104,5 @@ class Solution {
     }
 }
 ```
-1. ```str.startWith(str2)``` 함수를 사용하면 str2로 시작하는 string인지 체크하여 True / False 값을 return 해준다.
-> *endWith(str)은 str로 끝나는 string 인지 체크해준다.
+1. ```str.startsWith(str2)``` 함수를 사용하면 str2로 시작하는 string인지 체크하여 True / False 값을 return 해준다.
+> *endsWith(str)은 str로 끝나는 string 인지 체크해준다.
