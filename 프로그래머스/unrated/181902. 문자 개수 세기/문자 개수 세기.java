@@ -1,0 +1,18 @@
+class Solution {
+    public int[] solution(String my_string) {
+        int[] answer = new int[52];
+        for(int i = 0; i< answer.length; i++){
+            answer[i] = 0;
+        }
+        
+        for(int i = 0; i < my_string.length(); i++){
+            if((int)my_string.charAt(i) < (int)'a'){
+                answer[(int)my_string.charAt(i) - 65] += 1;
+            }else{
+                answer[(int)my_string.charAt(i) - 71] += 1;
+            }
+        }
+        
+        return answer;
+    }
+}
