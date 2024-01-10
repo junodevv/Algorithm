@@ -10,7 +10,7 @@ class Solution {
         int xy = brown+yellow; // 전체 넓이(x*y)
         HashMap<Integer, Integer> CandidatesXY = new HashMap<>();
         // 약수 찾기, 가로길이*세로길이 = 넓이, 따라서 넓이(xy)의 약수 중 답이있음
-        for(int i=3; i<xy; i++){
+        for(int i=3; i<xy/2; i++){
             if(xy%i == 0){
                 CandidatesXY.put(i, xy/i);
             }
