@@ -4,7 +4,7 @@ class Solution {
         String[] answer = {};
         
         String[] splited = myStr.split("([abc]+)");
-        answer = Arrays.stream(splited)
+        answer = Arrays.stream(splited).parallel()
                 .filter(i -> !i.equals(""))
                 .toArray(String[]::new);
         if(answer.length<1){
