@@ -1,11 +1,15 @@
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         Scanner sc = new Scanner(System.in);
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         List<Member> members = new ArrayList<>();
         int N = sc.nextInt();
         for (int i = 0; i < N; i++) {
@@ -13,8 +17,10 @@ public class Main {
         }
         Collections.sort(members);
         for (Member member : members) {
-            System.out.println(member.getAge() + " " + member.getName());
+            bw.write(member.getAge() + " " + member.getName() + "\n");
         }
+        bw.flush();
+        bw.close();
 
     }
 
