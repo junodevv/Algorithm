@@ -23,29 +23,19 @@ public class Main {
         Collections.sort(inputValues);
         
         for (Coordinate v : inputValues) {
-            bw.write(v.getX() + " " + v.getY() + "\n");
+            bw.write(v.X + " " + v.Y + "\n");
         }
         bw.flush();
         bw.close();
 
     }
-}
-
-class Coordinate implements Comparable<Coordinate> {
+    static class Coordinate implements Comparable<Coordinate> {
     private int X;
     private int Y;
 
     Coordinate(int X, int Y) {
         this.X = X;
         this.Y = Y;
-    }
-
-    public int getX() {
-        return X;
-    }
-
-    public int getY() {
-        return Y;
     }
 
     @Override
@@ -55,4 +45,5 @@ class Coordinate implements Comparable<Coordinate> {
         }
         return this.X - o.X;
     }
+}
 }
