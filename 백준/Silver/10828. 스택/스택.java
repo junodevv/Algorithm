@@ -1,11 +1,14 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
 import java.io.IOException;
 import java.util.Stack;
 
 public class Main{
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         Stack<Integer> stack = new Stack<>();
         int n = Integer.parseInt(br.readLine());
         for (int i = 0; i < n; i++) {
@@ -16,20 +19,25 @@ public class Main{
                 continue;
             }
             if (input.startsWith("pop")) {
-                System.out.println(stack.empty() ? -1 : stack.pop());
+                Integer result = stack.empty() ? -1 : stack.pop();
+                bw.write(result + "\n");
                 continue;
             }
             if (input.startsWith("size")) {
-                System.out.println(stack.size());
+                bw.write(stack.size() + "\n");
                 continue;
             }
             if (input.startsWith("empty")) {
-                System.out.println(stack.empty() ? 1 : 0);
+                Integer result = stack.empty() ? 1 : 0;
+                bw.write(result + "\n");
                 continue;
             }
             if (input.startsWith("top")) {
-                System.out.println(stack.empty() ? -1 : stack.peek());
+                Integer result = stack.empty() ? -1 : stack.peek();
+                bw.write(result + "\n");
             }
         }
+        bw.flush();
+        bw.close();
     }
 }
