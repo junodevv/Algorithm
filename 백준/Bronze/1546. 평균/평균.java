@@ -1,27 +1,20 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
-public class Main {
-    public static void main(String[] args) {
+public class Main{
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
-        List<Double> scores = new ArrayList<>();
-        double result = 0;
-        for (int i = 0; i < N; i++) {
-            scores.add(sc.nextDouble());
+        int sum = 0;
+        int max = 0;
+        for(int i=0; i<N; i++){
+            int now = sc.nextInt();
+            sum+=now;
+            if(now > max){
+                max = now;
+            }
         }
-        Double max = scores.stream().max(Comparator.naturalOrder()).get();
-        List<Double> changeScores = scores.stream()
-                .map(i -> (i / max) * 100)
-                .collect(Collectors.toList());
-
-        for (Double changeScore : changeScores) {
-            result += changeScore;
-        }
-
-        System.out.println(result / N);
+        // 100.0 곱해서 자동 형변환(double)
+        System.out.print(sum*100.0/max/N);
+        
     }
 }
