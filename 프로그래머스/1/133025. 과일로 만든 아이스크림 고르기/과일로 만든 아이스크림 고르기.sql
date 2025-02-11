@@ -1,11 +1,20 @@
--- 코드를 입력하세요
-SELECT FLAVOR
-FROM FIRST_HALF
-WHERE TOTAL_ORDER > 3000
-  AND FLAVOR IN (
-                SELECT FLAVOR
-                FROM ICECREAM_INFO
-                WHERE INGREDIENT_TYPE = 'fruit_based'
-  )
-ORDER BY TOTAL_ORDER desc
+-- -- WHERE절 서브쿼리
+-- SELECT FLAVOR
+-- FROM FIRST_HALF
+-- WHERE TOTAL_ORDER > 3000
+--   AND FLAVOR IN (
+--                 SELECT FLAVOR
+--                 FROM ICECREAM_INFO
+--                 WHERE INGREDIENT_TYPE = 'fruit_based'
+--   )
+-- ORDER BY TOTAL_ORDER desc
 
+-- FROM 절 서브쿼리
+-- SELECT절 서브쿼리
+-- JOIN
+SELECT a.FLAVOR
+FROM FIRST_HALF a, ICECREAM_INFO b
+WHERE a.FLAVOR = b.FLAVOR
+  AND a.TOTAL_ORDER > 3000
+  AND INGREDIENT_TYPE = 'fruit_based'
+  ORDER BY a.TOTAL_ORDER desc
